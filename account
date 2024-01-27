@@ -1,0 +1,27 @@
+class Bank_account:
+  def __init__(self,account_number,balance:float,account_name):
+    self.account_number=account_number
+    self.balance=balance
+    self.account_name=account_name
+
+  def deposit(self):
+    amount = float(input("Depozit məbləğini daxil edin : "))
+    self.balance += amount
+    print("\nDepozit məbləği: ", amount," AZN")
+ 
+  def account_info(self):
+    print(f'Hesab sahibinin adı : {self.account_name}')
+    print(f'Hesab nömrəsi : {self.account_number}\nBalans : {self.balance} AZN')
+
+  def withdraw_money(self):
+    amount = float(input("Çıxarılacaq məbləği daxil edin : "))
+    if self.balance >= amount:
+      self.balance -= amount
+      print("\nÇıxarıldı: ", amount," AZN")
+    else:
+      print("\nYetərli qədər balans yoxdur  ")
+
+account1=Bank_account('12345678',250,'Laman Mikayilova')
+account1.withdraw_money()
+account1.deposit()
+account1.account_info()
